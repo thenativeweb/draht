@@ -1,0 +1,20 @@
+{
+  "name": "eventbus",
+  "version": "0.0.1",
+  "description": "eventbus provides process-level messaging.",
+  "author": "Golo Roden <golo.roden@thenativeweb.io> (http://www.thenativeweb.io)",
+  "main": "lib/eventbus.js",
+  "private": true,
+  "dependencies": {
+    "eventemitter2": "0.4.11"
+  },
+  "devDependencies": {
+    "grunt": "0.4.0",
+    "grunt-contrib-jshint": "0.1.1",
+    "grunt-contrib-watch": "0.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thenativeweb/eventbus.git"
+  }
+}
