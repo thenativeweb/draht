@@ -6,14 +6,14 @@
   "main": "lib/eventbus.js",
   "private": true,
   "dependencies": {
-    "eventemitter2": "0.4.11"
+    "eventemitter2": "0.4.13"
   },
   "devDependencies": {
-    "grunt": "0.4.0",
-    "grunt-contrib-jshint": "0.1.1",
-    "grunt-contrib-watch": "0.2.0",
-    "grunt-mocha-test": "0.2.0",
-    "node-assertthat": "0.0.20"
+    "grunt": "0.4.4",
+    "grunt-contrib-jshint": "0.10.0",
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-mocha-test": "0.10.0",
+    "node-assertthat": "0.0.21"
   },
   "scripts": {
     "test": "mocha"
