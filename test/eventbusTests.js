@@ -11,8 +11,10 @@ suite('eventbus', function () {
 
       assert.that(bus, is.ofType('object'));
       assert.that(bus.on, is.ofType('function'));
-      assert.that(bus.off, is.ofType('function'));
+      assert.that(bus.once, is.ofType('function'));
       assert.that(bus.emit, is.ofType('function'));
+      assert.that(bus.removeListener, is.ofType('function'));
+      assert.that(bus.removeAllListeners, is.ofType('function'));
     });
 
     test('does not return the global instance.', function () {
@@ -35,8 +37,10 @@ suite('eventbus', function () {
 
       assert.that(bus, is.ofType('object'));
       assert.that(bus.on, is.ofType('function'));
-      assert.that(bus.off, is.ofType('function'));
+      assert.that(bus.once, is.ofType('function'));
       assert.that(bus.emit, is.ofType('function'));
+      assert.that(bus.removeListener, is.ofType('function'));
+      assert.that(bus.removeAllListeners, is.ofType('function'));
     });
 
     test('returns always the very same instance.', function () {

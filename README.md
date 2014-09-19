@@ -86,7 +86,7 @@ Nested namespaces are supported as well, but please note that when using wildcar
 
 #### Unsubscribing from events
 
-From time to time you need to unsubscribe from an event. For this use the `off` function and provide the event name as well as the handler to remove. Please note that in this case you need to provide the very same handler instance to `off` as you previously used.
+From time to time you need to unsubscribe from an event. For this use the `removeListener` function and provide the event name as well as the handler to remove. Please note that in this case you need to provide the very same handler instance to `removeListener` as you previously used.
 
 ```javascript
 var onFoo = function (evt, callback) {
@@ -95,7 +95,19 @@ var onFoo = function (evt, callback) {
 
 bus.on('demo::foo', onFoo);
 // ...
-bus.off('demo::foo', onFoo);
+bus.removeListener('demo::foo', onFoo);
+```
+
+To remove all listeners for an event use `removeAllListeners` and provide only the event name.
+
+```javascript
+bus.removeAllListeners('demo::foo');
+```
+
+If you omit the event name, too, then all listeners for all events are unsubscribed.
+
+```javascript
+bus.removeAllListeners();
 ```
 
 ## Running the build
