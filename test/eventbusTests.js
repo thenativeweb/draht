@@ -1,6 +1,6 @@
 'use strict';
 
-var assert = require('node-assertthat');
+var assert = require('assertthat');
 
 var eventbus = require('../lib/eventbus');
 
@@ -9,19 +9,19 @@ suite('eventbus', function () {
     test('returns an event emitter.', function (done) {
       var bus = eventbus.create();
 
-      assert.that(bus, is.ofType('object'));
-      assert.that(bus.on, is.ofType('function'));
-      assert.that(bus.once, is.ofType('function'));
-      assert.that(bus.emit, is.ofType('function'));
-      assert.that(bus.removeListener, is.ofType('function'));
-      assert.that(bus.removeAllListeners, is.ofType('function'));
+      assert.that(bus).is.ofType('object');
+      assert.that(bus.on).is.ofType('function');
+      assert.that(bus.once).is.ofType('function');
+      assert.that(bus.emit).is.ofType('function');
+      assert.that(bus.removeListener).is.ofType('function');
+      assert.that(bus.removeAllListeners).is.ofType('function');
       done();
     });
 
     test('does not return the global instance.', function (done) {
       var bus = eventbus.create();
 
-      assert.that(bus, is.not.sameAs(eventbus.get()));
+      assert.that(bus).is.not.sameAs(eventbus.get());
       done();
     });
 
@@ -29,7 +29,7 @@ suite('eventbus', function () {
       var bus1 = eventbus.create(),
           bus2 = eventbus.create();
 
-      assert.that(bus1, is.not.sameAs(bus2));
+      assert.that(bus1).is.not.sameAs(bus2);
       done();
     });
   });
@@ -38,12 +38,12 @@ suite('eventbus', function () {
     test('returns an event emitter.', function (done) {
       var bus = eventbus.get();
 
-      assert.that(bus, is.ofType('object'));
-      assert.that(bus.on, is.ofType('function'));
-      assert.that(bus.once, is.ofType('function'));
-      assert.that(bus.emit, is.ofType('function'));
-      assert.that(bus.removeListener, is.ofType('function'));
-      assert.that(bus.removeAllListeners, is.ofType('function'));
+      assert.that(bus).is.ofType('object');
+      assert.that(bus.on).is.ofType('function');
+      assert.that(bus.once).is.ofType('function');
+      assert.that(bus.emit).is.ofType('function');
+      assert.that(bus.removeListener).is.ofType('function');
+      assert.that(bus.removeAllListeners).is.ofType('function');
       done();
     });
 
@@ -51,7 +51,7 @@ suite('eventbus', function () {
       var bus1 = eventbus.get(),
           bus2 = eventbus.get();
 
-      assert.that(bus1, is.sameAs(bus2));
+      assert.that(bus1).is.sameAs(bus2);
       done();
     });
   });
