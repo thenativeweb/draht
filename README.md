@@ -1,46 +1,46 @@
-# eventbus
+# draht
 
-eventbus provides process-level messaging.
+draht provides process-level messaging.
 
-![eventbus](https://github.com/thenativeweb/eventbus/raw/master/images/logo.jpg "eventbus")
+![draht](https://github.com/thenativeweb/draht/raw/master/images/logo.jpg "draht")
 
 ## Installation
 
-At the moment, installation of this module must be made manually.
+    $ npm install draht
 
 ## Quick start
 
-The first thing you need to do is to integrate eventbus into your application. For that add a reference to the `eventbus` module.
+The first thing you need to do is to integrate draht into your application. For that add a reference to the `draht` module.
 
 ```javascript
-var eventbus = require('eventbus');
+var draht = require('draht');
 ```
 
-### Accessing the global eventbus
+### Accessing the global draht
 
-To access the global eventbus, you need to call the `get` function.
+To access the global draht, you need to call the `get` function.
 
 ```javascript
-var bus = eventbus.get();
+var bus = draht.get();
 ```
 
-Each time you call the `get` function, you get the very same instance of the eventbus.
+Each time you call the `get` function, you get the very same instance of the draht.
 
-### Creating your own eventbus
+### Creating your own draht
 
-If you need your own eventbus channel, call the `create` function.
+If you need your own draht channel, call the `create` function.
 
 ```javascript
-var bus = eventbus.create();
+var bus = draht.create();
 ```
 
-Each time you call the `create` function, you get a new eventbus instance.
+Each time you call the `create` function, you get a new draht instance.
 
-### Using an eventbus
+### Using an draht
 
 #### Emitting events
 
-To emit an event, call the eventbus's `emit` function and provide the event name as well as its payload as parameters. Optionally, you may specify a callback.
+To emit an event, call the draht's `emit` function and provide the event name as well as its payload as parameters. Optionally, you may specify a callback.
 
 ```javascript
 bus.emit('foo', { bar: 'baz' }, function () {
@@ -114,14 +114,14 @@ bus.removeAllListeners();
 
 ## Running the build
 
-This module can be built using [Grunt](http://gruntjs.com/). Besides running the tests, this also analyses the code. To run Grunt, go to the folder where you have installed eventbus and run `grunt`. You need to have [grunt-cli](https://github.com/gruntjs/grunt-cli) installed.
+This module can be built using [Grunt](http://gruntjs.com/). Besides running the tests, this also analyses the code. To run Grunt, go to the folder where you have installed draht and run `grunt`. You need to have [grunt-cli](https://github.com/gruntjs/grunt-cli) installed.
 
     $ grunt
 
 ## License
 
 The MIT License (MIT)
-Copyright (c) 2013-2014 the native web.
+Copyright (c) 2013-2015 the native web.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

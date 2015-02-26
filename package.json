@@ -1,7 +1,7 @@
 {
-  "name": "eventbus",
+  "name": "draht",
   "version": "0.2.2",
-  "description": "eventbus provides process-level messaging.",
+  "description": "draht provides process-level messaging.",
   "contributors": [
     {
       "name": "Golo Roden",
@@ -12,19 +12,18 @@
       "email": "matthias.wagler@thenativeweb.io"
     }
   ],
-  "main": "lib/eventbus.js",
-  "private": true,
+  "main": "lib/draht.js",
   "dependencies": {
     "eventemitter2": "0.4.14"
   },
   "devDependencies": {
-    "assertthat": "0.4.2",
+    "assertthat": "0.5.1",
     "grunt": "0.4.5",
-    "tourism": "0.13.2"
+    "tourism": "0.14.0"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/thenativeweb/eventbus.git"
+    "url": "git://github.com/thenativeweb/draht.git"
   },
   "license": "MIT"
 }

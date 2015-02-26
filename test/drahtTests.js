@@ -2,12 +2,12 @@
 
 var assert = require('assertthat');
 
-var eventbus = require('../lib/eventbus');
+var draht = require('../lib/draht');
 
-suite('eventbus', function () {
+suite('draht', function () {
   suite('create', function () {
     test('returns an event emitter.', function (done) {
-      var bus = eventbus.create();
+      var bus = draht.create();
 
       assert.that(bus).is.ofType('object');
       assert.that(bus.on).is.ofType('function');
@@ -19,15 +19,15 @@ suite('eventbus', function () {
     });
 
     test('does not return the global instance.', function (done) {
-      var bus = eventbus.create();
+      var bus = draht.create();
 
-      assert.that(bus).is.not.sameAs(eventbus.get());
+      assert.that(bus).is.not.sameAs(draht.get());
       done();
     });
 
     test('returns a new instance each time.', function (done) {
-      var bus1 = eventbus.create(),
-          bus2 = eventbus.create();
+      var bus1 = draht.create(),
+          bus2 = draht.create();
 
       assert.that(bus1).is.not.sameAs(bus2);
       done();
@@ -36,7 +36,7 @@ suite('eventbus', function () {
 
   suite('get', function () {
     test('returns an event emitter.', function (done) {
-      var bus = eventbus.get();
+      var bus = draht.get();
 
       assert.that(bus).is.ofType('object');
       assert.that(bus.on).is.ofType('function');
@@ -48,8 +48,8 @@ suite('eventbus', function () {
     });
 
     test('returns always the very same instance.', function (done) {
-      var bus1 = eventbus.get(),
-          bus2 = eventbus.get();
+      var bus1 = draht.get(),
+          bus2 = draht.get();
 
       assert.that(bus1).is.sameAs(bus2);
       done();
