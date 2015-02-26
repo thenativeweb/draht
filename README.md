@@ -2,6 +2,8 @@
 
 eventbus provides process-level messaging.
 
+![eventbus](https://github.com/thenativeweb/eventbus/raw/master/images/logo.jpg "eventbus")
+
 ## Installation
 
 At the moment, installation of this module must be made manually.
