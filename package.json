@@ -25,5 +25,9 @@
     "type": "git",
     "url": "git://github.com/thenativeweb/draht.git"
   },
+  "keywords": [
+    "eventbus",
+    "messaging"
+  ],
   "license": "MIT"
 }
