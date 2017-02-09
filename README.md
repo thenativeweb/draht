@@ -6,14 +6,16 @@ draht provides process-level messaging.
 
 ## Installation
 
-    $ npm install draht
+```bash
+$ npm install draht
+```
 
 ## Quick start
 
 The first thing you need to do is to integrate draht into your application. For that add a reference to the `draht` module.
 
 ```javascript
-var draht = require('draht');
+const draht = require('draht');
 ```
 
 ### Accessing the global draht
@@ -21,7 +23,7 @@ var draht = require('draht');
 To access the global draht, you need to call the `get` function.
 
 ```javascript
-var bus = draht.get();
+const bus = draht.get();
 ```
 
 Each time you call the `get` function, you get the very same instance of the draht.
@@ -31,7 +33,7 @@ Each time you call the `get` function, you get the very same instance of the dra
 If you need your own draht channel, call the `create` function.
 
 ```javascript
-var bus = draht.create();
+const bus = draht.create();
 ```
 
 Each time you call the `create` function, you get a new draht instance.
@@ -43,7 +45,7 @@ Each time you call the `create` function, you get a new draht instance.
 To emit an event, call the draht's `emit` function and provide the event name as well as its payload as parameters. Optionally, you may specify a callback.
 
 ```javascript
-bus.emit('foo', { bar: 'baz' }, function () {
+bus.emit('foo', { bar: 'baz' }, () => {
   // ...
 });
 ```
@@ -53,7 +55,7 @@ bus.emit('foo', { bar: 'baz' }, function () {
 You can also emit namespaced events. For that, prefix the event name with the namespace name and separate them by using the expression `::`.
 
 ```javascript
-bus.emit('demo::foo', { bar: 'baz' }, function () {
+bus.emit('demo::foo', { bar: 'baz' }, () => {
   // ...
 });
 ```
@@ -63,7 +65,7 @@ bus.emit('demo::foo', { bar: 'baz' }, function () {
 To subscribe to an event, call the `on` function and provide the name of the event you want to subscribe to as well as an event handling function.
 
 ```javascript
-bus.on('demo::foo', function (evt, callback) {
+bus.on('demo::foo', (evt, callback) => {
   // ...
 });
 ```
@@ -71,7 +73,7 @@ bus.on('demo::foo', function (evt, callback) {
 Alternatively you may also use the `once` function to subscribe to an event and have the handler automatically removed afterwards.
 
 ```javascript
-bus.once('demo::foo', function (evt, callback) {
+bus.once('demo::foo', (evt, callback) => {
   // ...
 });
 ```
@@ -79,7 +81,7 @@ bus.once('demo::foo', function (evt, callback) {
 If you want to receive all events within a specific namespace, you can use the `*` character.
 
 ```javascript
-bus.on('demo::*', function (evt, callback) {
+bus.on('demo::*', (evt, callback) => {
   // ...
 });
 ```
@@ -91,7 +93,7 @@ Nested namespaces are supported as well, but please note that when using wildcar
 From time to time you need to unsubscribe from an event. For this use the `removeListener` function and provide the event name as well as the handler to remove. Please note that in this case you need to provide the very same handler instance to `removeListener` as you previously used.
 
 ```javascript
-var onFoo = function (evt, callback) {
+const onFoo = function (evt, callback) {
   // ...
 };
 
@@ -114,14 +116,16 @@ bus.removeAllListeners();
 
 ## Running the build
 
-This module can be built using [Grunt](http://gruntjs.com/). Besides running the tests, this also analyses the code. To run Grunt, go to the folder where you have installed draht and run `grunt`. You need to have [grunt-cli](https://github.com/gruntjs/grunt-cli) installed.
+To build this module use [roboter](https://www.npmjs.com/package/roboter).
 
-    $ grunt
+```bash
+$ bot
+```
 
 ## License
 
 The MIT License (MIT)
-Copyright (c) 2013-2015 the native web.
+Copyright (c) 2013-2017 the native web.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
