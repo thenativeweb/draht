@@ -21,6 +21,18 @@
     "roboter": "0.14.3",
     "roboter-server": "0.14.3"
   },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/thenativeweb/draht.git"
