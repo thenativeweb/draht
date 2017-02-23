@@ -1,6 +1,6 @@
 {
   "name": "draht",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "draht provides process-level messaging.",
   "contributors": [
     {
