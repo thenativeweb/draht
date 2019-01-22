@@ -2,7 +2,7 @@
 
 const assert = require('assertthat');
 
-const Draht = require('../../lib/Draht');
+const Draht = require('../../src/Draht');
 
 suite('Draht', () => {
   test('returns an event emitter.', done => {
